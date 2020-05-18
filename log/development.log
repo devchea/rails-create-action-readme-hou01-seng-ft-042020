@@ -40,3 +40,110 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+Started GET "/" for ::1 at 2020-05-18 13:45:39 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (4.5ms)
+Completed 200 OK in 19ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-05-18 13:45:43 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 438ms (Views: 434.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-18 13:46:02 -0700
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 21ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-05-18 13:46:13 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kM7qseIYvF5U5oJiS4xuZm9en2dpHW9t4CydY06zjiDGjC6eKazmCkoOoTvtkaNSuSYNR/hnnKQ8zOxfhebOTA==", "title"=>"post1title", "description"=>"post1description", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "post1title"], ["description", "post1description"], ["created_at", "2020-05-18 20:46:13.009186"], ["updated_at", "2020-05-18 20:46:13.009186"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 35ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/posts" for ::1 at 2020-05-18 13:47:26 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-18 13:47:42 -0700
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 15.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for ::1 at 2020-05-18 13:47:51 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pvwnQ965MJecLqTWnyo+oqjR5xT99txcFZGeyDVYLNXwvuNsFQ1qw4LGh485N/OWfql1NGyML5XJce/0/g1suQ==", "title"=>"post 2 title", "description"=>"post 2 desc", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "post 2 title"], ["description", "post 2 desc"], ["created_at", "2020-05-18 20:47:51.235499"], ["updated_at", "2020-05-18 20:47:51.235499"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 6.9ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"posts", :id=>nil} missing required keys: [:id]):
+  
+app/controllers/posts_controller.rb:20:in `create'
+  Rendering /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.8ms)
+Started GET "/posts" for ::1 at 2020-05-18 13:50:02 -0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-18 13:50:18 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 246ms (Views: 232.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for ::1 at 2020-05-18 13:50:27 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M/RmnjjqsbSNlaWHMHVz7CVQgyekKCaMX8Dy6/rOusBltqKx817r4JN9ht6WaL7Y8ygRBzVS1UWDIIPXMZv6rA==", "title"=>"post 3 title", "description"=>"post 3 desc", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "post 3 title"], ["description", "post 3 desc"], ["created_at", "2020-05-18 20:50:27.385056"], ["updated_at", "2020-05-18 20:50:27.385056"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"posts", :id=>nil} missing required keys: [:id]):
+  
+app/controllers/posts_controller.rb:20:in `create'
+  Rendering /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/richardchea/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.9ms)
